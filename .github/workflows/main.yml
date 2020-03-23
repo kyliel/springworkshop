@@ -11,16 +11,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: go to one project
-      run: cd todo-service
     - name: Build with Maven
-      run: mvn package -DskipTests -Pcloud
-    - name: go to another project
-      run: cd ../gateway
+      run: mvn package -DskipTests -Pcloud -f todo-service
     - name: Build with Maven
-      run: mvn package -DskipTests -Pcloud
-    - name: go back to the top directory
-      run: cd ..
+      run: mvn package -DskipTests -Pcloud -f gateway
     - name: Login to Azure Spring Cloud
       uses: azure/login@v1
       with:
