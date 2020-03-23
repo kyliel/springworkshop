@@ -18,7 +18,7 @@ jobs:
     - name: Login to Azure Spring Cloud
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CREDENTIAL }}
     - name: Install Azure Spring Cloud extension
       run: az extension add -y --name spring-cloud
     - name: Deploy to Azure Spring Cloud
