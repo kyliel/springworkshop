@@ -21,7 +21,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIAL }}
     - name: Install Azure Spring Cloud extension
       run: az extension add -y --name spring-cloud
-    - name: Deploy to Azure Spring Cloud
+    - name: Deploy to Azure Spring Cloud (resource group: kylietest)
       run: az spring-cloud app deploy --resource-group kylietest --service kylietest --name todo-service --jar-path todo-service/target/demo-0.0.1-SNAPSHOT.jar
     - name: Deploy to Azure Spring Cloud
       run: az spring-cloud app deploy --resource-group kylietest --service kylietest --name gateway --jar-path gateway/target/demo-0.0.1-SNAPSHOT.jar
